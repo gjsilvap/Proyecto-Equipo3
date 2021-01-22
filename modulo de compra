@@ -1,0 +1,1020 @@
+
+package Interfaz;
+
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class ModuloCompra extends javax.swing.JFrame {
+
+
+    public ModuloCompra() {
+        initComponents();
+        setSize(580,343);
+        setResizable(false);
+        this.jtextCedulaProo.setEnabled(true);
+        this.jtextceducom.setEnabled(true);
+        this.jfieldNombreProo.setEnabled(false);
+        this.jfieldDirecProo.setEnabled(false);
+        this.jtexttlfproo.setEnabled(false);
+        this.jtextprodcom.setEnabled(false);
+        this.jtextcantinv.setEnabled(false);
+        this.jtextcostocom.setEnabled(false);
+        this.jDatecompra.setEnabled(false);
+        this.codigoprod.setEnabled(false);
+        
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jtextCedulaProo = new javax.swing.JTextField();
+        boxidentidad = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jfieldNombreProo = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jfieldDirecProo = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jtexttlfproo = new javax.swing.JTextField();
+        jLabelBuscar1 = new javax.swing.JLabel();
+        jLabelRegistrar1 = new javax.swing.JLabel();
+        jLabelEliminar = new javax.swing.JLabel();
+        jLabelModificar = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtextprodcom = new javax.swing.JTextField();
+        jDatecompra = new com.toedter.calendar.JDateChooser();
+        boxidentidaddos = new javax.swing.JComboBox<>();
+        jtextceducom = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jtextcantinv = new javax.swing.JTextField();
+        jLabelRegistrar2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jtextcostocom = new javax.swing.JTextField();
+        jLabelBuscar2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        codigoprod = new javax.swing.JTextField();
+        buscarprod = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("REGISTRO DE COMPRA");
+        setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(32, 15, 42));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 102, 255)));
+
+        jPanel2.setBackground(new java.awt.Color(32, 15, 42));
+
+        jtextCedulaProo.setToolTipText("Campo de texto para introducir el documento de identidad  del proveedor que sea buscaar o registrar.");
+        jtextCedulaProo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtextCedulaProoFocusGained(evt);
+            }
+        });
+        jtextCedulaProo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtextCedulaProoActionPerformed(evt);
+            }
+        });
+        jtextCedulaProo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtextCedulaProoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtextCedulaProoKeyTyped(evt);
+            }
+        });
+
+        boxidentidad.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        boxidentidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V-", "E-", "P-", "J-", "G-" }));
+        boxidentidad.setToolTipText("Seleccione el tipo de documento con el cual desea buscar el proveedor.");
+        boxidentidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxidentidadActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nombre");
+
+        jfieldNombreProo.setToolTipText("Campo de texto para que mostrara o editara\n el nombre del proveedor.");
+        jfieldNombreProo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jfieldNombreProoFocusGained(evt);
+            }
+        });
+        jfieldNombreProo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jfieldNombreProoKeyTyped(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Direccion");
+
+        jfieldDirecProo.setToolTipText("Campo de texto donde mostrara o editara\n la direccion del proveedor.");
+        jfieldDirecProo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jfieldDirecProoFocusGained(evt);
+            }
+        });
+        jfieldDirecProo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jfieldDirecProoActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Telefono");
+
+        jtexttlfproo.setToolTipText("Campo de texto que mostrara o podra editar \nel numero de telefono del proovedor.");
+        jtexttlfproo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtexttlfprooFocusGained(evt);
+            }
+        });
+        jtexttlfproo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtexttlfprooKeyTyped(evt);
+            }
+        });
+
+        jLabelBuscar1.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabelBuscar1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search_1.png"))); // NOI18N
+        jLabelBuscar1.setText("BUSCAR");
+        jLabelBuscar1.setToolTipText("Boton para  buscar al proveedor mediante \nel documento de identidad.");
+        jLabelBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelBuscar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBuscar1MouseClicked(evt);
+            }
+        });
+
+        jLabelRegistrar1.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
+        jLabelRegistrar1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRegistrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plus.png"))); // NOI18N
+        jLabelRegistrar1.setText(" REGISTRAR");
+        jLabelRegistrar1.setToolTipText("Boton para registrar el nuevo proveedor.\n No podra registrar si los campos se encuentran vacio.");
+        jLabelRegistrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegistrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelRegistrar1MouseClicked(evt);
+            }
+        });
+
+        jLabelEliminar.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
+        jLabelEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/multiply-1.png"))); // NOI18N
+        jLabelEliminar.setText("ELIMINAR");
+        jLabelEliminar.setToolTipText("Mediante el documento de identidad podra elimninar \nel proveedor de la base de datos.");
+        jLabelEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelEliminarMouseClicked(evt);
+            }
+        });
+
+        jLabelModificar.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelModificar.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
+        jLabelModificar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit-1.png"))); // NOI18N
+        jLabelModificar.setLabelFor(codigoprod);
+        jLabelModificar.setText("MODIFICAR");
+        jLabelModificar.setToolTipText("Boton para modificar los datos del proveedor.");
+        jLabelModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelModificarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 193, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(boxidentidad, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtexttlfproo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jtextCedulaProo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jfieldDirecProo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jfieldNombreProo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabelRegistrar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelModificar)))
+                .addGap(46, 46, 46))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boxidentidad, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtextCedulaProo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelBuscar1))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jfieldNombreProo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jfieldDirecProo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtexttlfproo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRegistrar1)
+                    .addComponent(jLabelEliminar)
+                    .addComponent(jLabelModificar))
+                .addContainerGap())
+        );
+
+        jPanel3.setBackground(new java.awt.Color(32, 15, 42));
+
+        jLabel5.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Producto");
+
+        jLabel6.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Fecha");
+
+        jtextprodcom.setToolTipText("Nombre del producto que se desea comprar.");
+        jtextprodcom.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtextprodcomFocusGained(evt);
+            }
+        });
+        jtextprodcom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtextprodcomMouseClicked(evt);
+            }
+        });
+
+        boxidentidaddos.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        boxidentidaddos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V-", "E-", "P-", "J-", "G-" }));
+        boxidentidaddos.setToolTipText("Seleccione el tipo de documento con el cual desea buscar el proveedor.");
+        boxidentidaddos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxidentidaddosActionPerformed(evt);
+            }
+        });
+
+        jtextceducom.setToolTipText("Campo de texto para introducir el documento de identidad\n  del proveedor que sea buscaar o registrar.");
+        jtextceducom.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtextceducomFocusGained(evt);
+            }
+        });
+        jtextceducom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtextceducomKeyTyped(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Cantidad");
+
+        jtextcantinv.setToolTipText("Cantidad del prodcuto que se desea comprar.");
+        jtextcantinv.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtextcantinvFocusGained(evt);
+            }
+        });
+        jtextcantinv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtextcantinvActionPerformed(evt);
+            }
+        });
+        jtextcantinv.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtextcantinvKeyTyped(evt);
+            }
+        });
+
+        jLabelRegistrar2.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
+        jLabelRegistrar2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRegistrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plus.png"))); // NOI18N
+        jLabelRegistrar2.setText(" REGISTRAR");
+        jLabelRegistrar2.setToolTipText("Boton para registrar la compra que se esta realizando.\nNo se podra registrar si los campos  se encuentran \nvacios.");
+        jLabelRegistrar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegistrar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelRegistrar2MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Costo");
+
+        jtextcostocom.setToolTipText("Costo unitario del producto a comprar.");
+        jtextcostocom.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtextcostocomFocusGained(evt);
+            }
+        });
+        jtextcostocom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtextcostocomActionPerformed(evt);
+            }
+        });
+        jtextcostocom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtextcostocomKeyTyped(evt);
+            }
+        });
+
+        jLabelBuscar2.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabelBuscar2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search_1.png"))); // NOI18N
+        jLabelBuscar2.setText("BUSCAR");
+        jLabelBuscar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelBuscar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBuscar2MouseClicked(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Código");
+
+        codigoprod.setToolTipText("Codigo para poder buscar el producto que se sea comprar\no registrarlo en la base de datos.");
+        codigoprod.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                codigoprodFocusGained(evt);
+            }
+        });
+        codigoprod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                codigoprodKeyTyped(evt);
+            }
+        });
+
+        buscarprod.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        buscarprod.setForeground(new java.awt.Color(255, 255, 255));
+        buscarprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search_1.png"))); // NOI18N
+        buscarprod.setText("BUSCAR");
+        buscarprod.setToolTipText("Boton para  buscar el producto que se desea comprar.\nSi no se encuentra se procedera a registrarse.\n");
+        buscarprod.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buscarprod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buscarprodMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtextcantinv, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDatecompra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                            .addComponent(jtextprodcom)
+                            .addComponent(jtextcostocom, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(codigoprod, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buscarprod)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(boxidentidaddos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabelRegistrar2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jtextceducom, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelBuscar2)
+                        .addContainerGap(45, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(boxidentidaddos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtextceducom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBuscar2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(codigoprod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buscarprod, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtextprodcom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jtextcantinv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jtextcostocom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDatecompra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelRegistrar2)
+                .addContainerGap())
+        );
+
+        jLabel7.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("DATOS DE LA COMPRA");
+
+        jLabel8.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("DATOS DEL PROVEEDOR");
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Minus_25px_1.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Unchecked_Checkbox_25px.png"))); // NOI18N
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_25px_1.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)))
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel13))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void boxidentidadActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void boxidentidaddosActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void jtextCedulaProoKeyTyped(java.awt.event.KeyEvent evt) {                                         
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+             // TODO add your handling code here:
+    }                                        
+
+    private void jtexttlfprooKeyTyped(java.awt.event.KeyEvent evt) {                                      
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+        // TODO add your handling code here:
+    }                                     
+
+    private void jfieldDirecProoActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void jtextprodcomMouseClicked(java.awt.event.MouseEvent evt) {                                          
+
+        // TODO add your handling code here:
+    }                                         
+
+    private void jtextcantinvActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jLabelBuscar1MouseClicked(java.awt.event.MouseEvent evt) {                                           
+        if(this.jtextCedulaProo.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo de identidad","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+        try{
+         Conexion conec = new Conexion();
+         conec.ConectarBDatos();
+         conec.sql="Select proveedor.* from proveedor where rif_o_ced='"+this.boxidentidad.getSelectedItem()+jtextCedulaProo.getText()+"'";
+         conec.tb=conec.stm.executeQuery(conec.sql);
+          if(conec.tb.next()){
+              this.jfieldNombreProo.setText(conec.tb.getString("nombre_pro"));
+              this.jfieldDirecProo.setText(conec.tb.getString("direccion_pro"));
+              this.jtexttlfproo.setText(conec.tb.getString("telf_pro"));
+              this.jtextCedulaProo.setEnabled(false);
+              this.jLabelEliminar.setEnabled(true);
+              this.jLabelModificar.setEnabled(true);
+              this.jfieldNombreProo.setEnabled(true);
+              this.jfieldDirecProo.setEnabled(true);
+              this.jtexttlfproo.setEnabled(true);
+              this.jLabelRegistrar1.setEnabled(false);
+         }
+          else
+           {
+           JOptionPane.showMessageDialog(new JFrame(),"Cedula no registrada,\nrellene los siguientes campos","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+           this.jLabelRegistrar1.setEnabled(true);
+           this.jfieldNombreProo.setEnabled(true);
+           this.jfieldDirecProo.setEnabled(true);
+           this.jtexttlfproo.setEnabled(true);
+           }
+        }
+        catch(Exception e2)
+          {
+              System.out.println("Error en JDBC");
+        }
+        }
+    }                                          
+
+    private void jLabelRegistrar1MouseClicked(java.awt.event.MouseEvent evt) {                                              
+        try
+        {
+            if((this.jfieldNombreProo.getText().equals("")) || (this.jfieldDirecProo.getText().equals("")) || (this.jtexttlfproo.getText().equals(""))){
+                   JOptionPane.showMessageDialog(new JFrame(), "Rellene todos los campos", "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                Conexion conec = new Conexion();
+        conec.ConectarBDatos();
+        conec.sql="INSERT INTO proveedor (rif_o_ced, nombre_pro, telf_pro, direccion_pro) VALUES ('"+this.boxidentidad.getSelectedItem()+this.jtextCedulaProo.getText()+"','"+this.jfieldNombreProo.getText()+"','"+this.jtexttlfproo.getText()+"','"+this.jfieldDirecProo.getText()+"')";
+        conec.stm.executeUpdate(conec.sql);
+        JOptionPane.showMessageDialog(new JFrame(),"Registro incluido","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        this.jtextCedulaProo.setText("");
+        this.jfieldNombreProo.setText("");
+        this.jtexttlfproo.setText("");
+        this.jfieldDirecProo.setText("");
+        this.jfieldNombreProo.setEnabled(false);
+        this.jtexttlfproo.setEnabled(false);
+        this.jfieldDirecProo.setEnabled(false);
+        this.jtextCedulaProo.setEnabled(true);
+        this.jtextCedulaProo.requestFocus();
+        conec.DesconectarBD();           
+        }
+        }
+        catch(Exception e2)
+        {
+        System.out.println("Error en incluir "+e2);
+        }
+    }                                             
+
+    private void jLabelRegistrar2MouseClicked(java.awt.event.MouseEvent evt) {                                              
+        try
+        {
+            if((this.jtextprodcom.getText().equals("")) || (this.jtextcantinv.getText().equals(""))
+                    || (this.jtextceducom.getText().equals("")) || (this.jtextcostocom.getText().equals(""))){
+                   JOptionPane.showMessageDialog(new JFrame(), "Rellene todos los campos", "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                Conexion conec = new Conexion();
+        conec.ConectarBDatos();
+        Date fechacompra = new java.sql.Date(new java.util.Date().getTime());
+        Integer cant = Integer.parseInt(this.jtextcantinv.getText());
+        float costocom = Float.parseFloat(this.jtextcostocom.getText());
+        float costotal=Float.parseFloat(this.jtextcostocom.getText())*cant;
+        DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        Date fecha = this.jDatecompra.getDate();
+        String fechatext = formatter.format(fecha);
+        Date strDate = formatter.parse(fechatext);
+        conec.sql="INSERT INTO compras(cedula_com, producto_com, cant_prod, costo_comp, costotal_comp, fecha_comp) VALUES ('"+this.boxidentidad.getSelectedItem()+this.jtextceducom.getText()+"','"+this.jtextprodcom.getText()+"','"+this.jtextcantinv.getText()+"','"+costocom+"','"+costotal+"','"+fechatext+"')";
+        conec.stm.executeUpdate(conec.sql);
+        if(this.jtextprodcom.isEnabled()==true){
+        conec.sql="INSERT INTO inventario(producto, cant) VALUES ('"+this.jtextprodcom.getText()+"','"+cant+"')";
+        conec.stm.executeUpdate(conec.sql);
+        }
+        if(this.jtextprodcom.isEnabled()==false){
+            conec.sql="SELECT inventario.* from inventario where codigo_inv='"+this.codigoprod.getText()+"'";
+            conec.tb=conec.stm.executeQuery(conec.sql);
+            if(conec.tb.next()){
+                Integer cantant = Integer.parseInt(conec.tb.getString("cant"));
+                int cantotal=cantant+cant;
+            conec.sql="UPDATE inventario set cant='"+cantotal+"' where codigo_inv='"+this.codigoprod.getText()+"'";
+            conec.stm.executeUpdate(conec.sql);
+            }
+        }
+        JOptionPane.showMessageDialog(new JFrame(),"Compra registrada","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        this.jtextceducom.setText("");
+        this.jtextcostocom.setText("");
+        this.jtextprodcom.setText("");
+        this.jtextcantinv.setText("");
+        this.codigoprod.setText("");
+        this.codigoprod.setEnabled(false);
+        this.jtextcostocom.setEnabled(false);
+        this.jtextprodcom.setEnabled(false);
+        this.jtextcantinv.setEnabled(false);
+        this.jDatecompra.setEnabled(true);
+        this.jtextceducom.setEnabled(true);
+        this.jtextceducom.requestFocus();
+        conec.DesconectarBD();           
+        }
+        }
+        catch(Exception e2)
+        {
+        System.out.println("Error en incluir "+e2);
+        }
+         
+    
+   
+    }                                             
+
+    private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {                                            
+        try{
+            int res= JOptionPane.showConfirmDialog(new JFrame(), "¿Esta seguro de eliminar este registro?","Pregunta",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+            if(res == 0)
+            {
+                Conexion conec = new Conexion();
+                conec.ConectarBDatos();
+                conec.sql="Delete from proveedor where rif_o_ced='"+this.boxidentidad.getSelectedItem()+this.jtextCedulaProo.getText()+"'";
+                conec.stm.executeUpdate(conec.sql);
+                JOptionPane.showMessageDialog(new JFrame(),"Registro Eliminado","Mensaje",JOptionPane.ERROR_MESSAGE);
+                conec.DesconectarBD();
+                this.jtextCedulaProo.setText("");
+                this.jfieldNombreProo.setText("");
+                this.jfieldDirecProo.setText("");
+                this.jtexttlfproo.setText("");
+                this.jfieldNombreProo.setEnabled(false);
+                this.jfieldDirecProo.setEnabled(false);
+                this.jtexttlfproo.setEnabled(false);
+                this.jtextCedulaProo.setEnabled(true);
+                jtextCedulaProo.requestFocus();
+            }
+        }
+        catch(Exception e2){
+            System.out.println("Error en eliminar" +e2);
+        }               
+    }                                           
+
+    private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {                                             
+        try{
+            Conexion conec = new Conexion();
+            conec.ConectarBDatos();
+            conec.sql = "UPDATE proveedor set rif_o_ced='"+this.boxidentidad.getSelectedItem()+jtextCedulaProo.getText()+"', nombre_pro='"+jfieldNombreProo.getText()+"', telf_pro='"+jtexttlfproo.getText()+"', direccion_pro='"+jfieldDirecProo.getText()+"' where rif_o_ced='"+this.boxidentidad.getSelectedItem()+jtextCedulaProo.getText()+"'";
+            conec.stm.executeUpdate(conec.sql);
+            JOptionPane.showMessageDialog(new JFrame(),"Registro Actualizado","Mensaje",JOptionPane.WARNING_MESSAGE);
+            this.jtextCedulaProo.setText("");
+            this.jfieldNombreProo.setText("");
+            this.jfieldDirecProo.setText("");
+            this.jtexttlfproo.setText("");
+            this.jfieldNombreProo.setEnabled(false);
+            this.jfieldDirecProo.setEnabled(false);
+            this.jtexttlfproo.setEnabled(false);
+            this.jtextCedulaProo.setEnabled(true);	
+            jtextCedulaProo.requestFocus();
+            conec.DesconectarBD();
+        }
+        catch(Exception e2){
+            System.out.println("Eror al modificar"+e2);
+        }                    
+    }                                            
+
+    private void jtextcostocomActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void jtextceducomKeyTyped(java.awt.event.KeyEvent evt) {                                      
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                     
+
+    private void jtextCedulaProoFocusGained(java.awt.event.FocusEvent evt) {                                            
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.jtextCedulaProo.setDocument(new JTextFieldLimit(8));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.jtextCedulaProo.setDocument(new JTextFieldLimit(9));
+        }
+    }                                           
+
+    private void jtextceducomFocusGained(java.awt.event.FocusEvent evt) {                                         
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.jtextceducom.setDocument(new JTextFieldLimit(8));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.jtextceducom.setDocument(new JTextFieldLimit(9));
+        }
+    }                                        
+
+    private void jLabelBuscar2MouseClicked(java.awt.event.MouseEvent evt) {                                           
+        if(this.jtextceducom.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo de identidad","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+        try{
+         Conexion conec = new Conexion();
+         conec.ConectarBDatos();
+         conec.sql="Select proveedor.* from proveedor where rif_o_ced='"+this.boxidentidaddos.getSelectedItem()+jtextceducom.getText()+"'";
+         conec.tb=conec.stm.executeQuery(conec.sql);
+          if(conec.tb.next()){
+              this.jtextceducom.setEnabled(false);
+            //  this.jtextprodcom.setEnabled(true);
+            // this.jtextcantinv.setEnabled(true);
+            // this.jtextcostocom.setEnabled(true);
+           //   this.jDatecompra.setEnabled(true);
+              this.codigoprod.setEnabled(true);
+              this.codigoprod.requestFocus();
+         }
+          else
+           {
+           JOptionPane.showMessageDialog(new JFrame(),"Proveedor no registrado,\nrellene los campos a la izquierda","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+           this.jtextCedulaProo.requestFocus();
+           }
+        }
+        catch(Exception e2)
+          {
+              System.out.println("Error en JDBC");
+        }
+        }
+    }                                          
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        this.setExtendedState(ICONIFIED);
+        // TODO add your handling code here:
+    }                                     
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        this.dispose();
+        // TODO add your handling code here:
+    }                                     
+
+    private void buscarprodMouseClicked(java.awt.event.MouseEvent evt) {                                        
+        try{
+         Conexion conec = new Conexion();
+         conec.ConectarBDatos();
+         conec.sql="Select inventario.* from inventario where codigo_inv='"+this.codigoprod.getText()+"'";
+         conec.tb=conec.stm.executeQuery(conec.sql);
+          if(conec.tb.next()){
+              this.jtextprodcom.setText(conec.tb.getString("producto"));
+              this.jtextcantinv.setText(conec.tb.getString("cant"));
+              this.codigoprod.setEnabled(false);
+            //  this.jtextprodcom.setEnabled(true);
+              this.jtextcantinv.setEnabled(true);
+              this.jtextcostocom.setEnabled(true);
+              this.jDatecompra.setEnabled(true);
+         }
+          else
+           {
+           JOptionPane.showMessageDialog(new JFrame(),"Producto no registrado, rellene los campos para añadir los productos","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+            this.jtextprodcom.setEnabled(true);
+            this.jtextcantinv.setEnabled(true);
+            this.jtextcostocom.setEnabled(true);
+            this.jDatecompra.setEnabled(true);
+            this.codigoprod.setEnabled(false);
+         //   this.codigoprod.requestFocus();
+           }
+        }
+        catch(Exception e2)
+          {
+              System.out.println("Error en JDBC");
+        }
+    }                                       
+
+    private void jtextcantinvKeyTyped(java.awt.event.KeyEvent evt) {                                      
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                     
+
+    private void jtextcostocomKeyTyped(java.awt.event.KeyEvent evt) {                                       
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                      
+
+    private void codigoprodKeyTyped(java.awt.event.KeyEvent evt) {                                    
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                   
+
+    private void jtexttlfprooFocusGained(java.awt.event.FocusEvent evt) {                                         
+        this.jtexttlfproo.setDocument(new JTextFieldLimit(11));
+    }                                        
+
+    private void jtextCedulaProoActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void jtextCedulaProoKeyPressed(java.awt.event.KeyEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void jfieldNombreProoKeyTyped(java.awt.event.KeyEvent evt) {                                          
+                char c=evt.getKeyChar(); 
+          if(Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          }
+    }                                         
+
+    private void jfieldNombreProoFocusGained(java.awt.event.FocusEvent evt) {                                             
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.jfieldNombreProo.setDocument(new JTextFieldLimit(45));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.jfieldNombreProo.setDocument(new JTextFieldLimit(45));
+        }
+    }                                            
+
+    private void jfieldDirecProoFocusGained(java.awt.event.FocusEvent evt) {                                            
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.jfieldDirecProo.setDocument(new JTextFieldLimit(99));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidaddos.getSelectedIndex()==4){
+            this.jfieldDirecProo.setDocument(new JTextFieldLimit(99));
+        }
+    }                                           
+
+    private void codigoprodFocusGained(java.awt.event.FocusEvent evt) {                                       
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.codigoprod.setDocument(new JTextFieldLimit(15));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidaddos.getSelectedIndex()==4){
+            this.codigoprod.setDocument(new JTextFieldLimit(15));
+        }
+    }                                      
+
+    private void jtextprodcomFocusGained(java.awt.event.FocusEvent evt) {                                         
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.jtextprodcom.setDocument(new JTextFieldLimit(50));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidaddos.getSelectedIndex()==4){
+            this.jtextprodcom.setDocument(new JTextFieldLimit(50));
+        }
+    }                                        
+
+    private void jtextcantinvFocusGained(java.awt.event.FocusEvent evt) {                                         
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.jtextcantinv.setDocument(new JTextFieldLimit(20));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidaddos.getSelectedIndex()==4){
+            this.jtextcantinv.setDocument(new JTextFieldLimit(20));
+        }
+    }                                        
+
+    private void jtextcostocomFocusGained(java.awt.event.FocusEvent evt) {                                          
+        if(this.boxidentidaddos.getSelectedIndex()==0 || this.boxidentidaddos.getSelectedIndex()==1 || this.boxidentidaddos.getSelectedIndex()==2){
+            this.jtextcostocom.setDocument(new JTextFieldLimit(20));
+        }
+        if(this.boxidentidaddos.getSelectedIndex()==3 || this.boxidentidaddos.getSelectedIndex()==4){
+            this.jtextcostocom.setDocument(new JTextFieldLimit(20));
+        }
+    }                                         
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JComboBox<String> boxidentidad;
+    private javax.swing.JComboBox<String> boxidentidaddos;
+    private javax.swing.JLabel buscarprod;
+    private javax.swing.JTextField codigoprod;
+    private com.toedter.calendar.JDateChooser jDatecompra;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelBuscar1;
+    private javax.swing.JLabel jLabelBuscar2;
+    private javax.swing.JLabel jLabelEliminar;
+    private javax.swing.JLabel jLabelModificar;
+    private javax.swing.JLabel jLabelRegistrar1;
+    private javax.swing.JLabel jLabelRegistrar2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jfieldDirecProo;
+    private javax.swing.JTextField jfieldNombreProo;
+    private javax.swing.JTextField jtextCedulaProo;
+    private javax.swing.JTextField jtextcantinv;
+    private javax.swing.JTextField jtextceducom;
+    private javax.swing.JTextField jtextcostocom;
+    private javax.swing.JTextField jtextprodcom;
+    private javax.swing.JTextField jtexttlfproo;
+    // End of variables declaration                   
+}
