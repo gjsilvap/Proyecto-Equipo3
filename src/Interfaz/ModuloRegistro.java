@@ -390,7 +390,7 @@ public class ModuloRegistro extends javax.swing.JFrame {
         Pattern p= Pattern.compile("[^0-9]");
         Matcher m=p.matcher(cedulaserv.getText());
         if(m.find() || ((cedulaserv.getText().length()< 6) && (cedulaserv.getText().length()> 8)))
-        { JOptionPane.showMessageDialog(new JFrame(),"La cedula debe ser mayor a 6 digitos","Alerta",JOptionPane.WARNING_MESSAGE);
+        { JOptionPane.showMessageDialog(new JFrame(),"La cedula debe ser mayor a 5 digitos","Alerta",JOptionPane.WARNING_MESSAGE);
       }
         else{
         try
@@ -427,7 +427,7 @@ public class ModuloRegistro extends javax.swing.JFrame {
 
     private void cedulaservKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaservKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0' || c>'9') evt.consume();
+        if (c<'0' || c>'8') evt.consume();
         
     }//GEN-LAST:event_cedulaservKeyTyped      Este void es para el caso de tener que eliminar un registro:
 
@@ -469,12 +469,12 @@ public class ModuloRegistro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JFrame(),"Registro Actualizado","Mensaje",JOptionPane.WARNING_MESSAGE);
          this.cedulaserv.setText("");
          this.dirmodserv.setText("");
-         this.telfmodserv.setText("");
          this.nombremodserv.setText("");
+         this.telfmodserv.setText("");
          this.apellidomodserv.setText("");
          this.dirmodserv.setEnabled(false);
-         this.telfmodserv.setEnabled(false);
          this.nombremodserv.setEnabled(false);
+         this.telfmodserv.setEnabled(false);
          this.apellidomodserv.setEnabled(false);
          this.cedulaserv.setEnabled(true);
             cedulaserv.requestFocus();
@@ -608,11 +608,11 @@ public class ModuloRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelBuscar;
     private javax.swing.JLabel jLabelEliminar;
-    private javax.swing.JLabel jLabelModificar;
-    private javax.swing.JLabel jLabelRegistrar;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabelModificar;
+    private javax.swing.JLabel jLabelRegistrar;
     private javax.swing.JTextField nombremodserv;
     private javax.swing.JTextField telfmodserv;
     // End of variables declaration//GEN-END:variables
