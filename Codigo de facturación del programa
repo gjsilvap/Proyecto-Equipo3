@@ -1,0 +1,1101 @@
+# Proyecto-Equipo3
+Se desea implementar un sistema donde podemos registrar tanto administrativos como contables de la empresa Servicio e Instalaciones Medina
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Interfaz;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aeros
+ */
+public class Factura extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Factura
+     */
+    public Factura() {
+        initComponents();
+        this.ivafac.setEnabled(false);
+        this.costotalfac.setEnabled(false);
+        this.nombreprod.setEnabled(false);
+        this.precioprod.setEnabled(false);
+        this.cantprod.setEnabled(false);
+        this.nombrefac.setEnabled(false);
+        this.costotalfac.setEnabled(false);
+        this.textapellidofac.setEditable(false);
+        this.direccionfac.setEnabled(false);
+        this.serviciofac.setEnabled(false);
+        this.textotelefonofac.setEnabled(false);
+        this.costofac.setText("0.0");
+        this.precioprod.setText("0.0");
+    }
+public void limpiar(){
+    this.textcedulabus.setText("");
+    this.textotelefonofac.setText("");
+    this.serviciofac.setText("");
+    this.costofac.setText("0.0");
+    this.textapellidofac.setText("");
+    this.nombrefac.setText("");
+    this.direccionfac.setText("");
+    this.costotalfac.setText("");
+    this.nombreprod.setText("");
+    this.precioprod.setText("0.0");
+    this.cantprod.setText("");
+    this.ivafac.setText("");
+    this.codigoprod.setText("");
+    
+    this.textcedulabus.setEnabled(true);
+    this.nombrefac.setEnabled(false);
+    this.textotelefonofac.setEnabled(false);
+    this.serviciofac.setEnabled(false);
+    this.costofac.setEnabled(false);
+    this.textapellidofac.setEnabled(false); 
+    this.direccionfac.setEnabled(false);
+    this.costotalfac.setEnabled(false);
+    this.nombreprod.setEnabled(false);
+    this.precioprod.setEnabled(false);
+    this.cantprod.setEnabled(false);
+    this.ivafac.setEnabled(false);
+    this.codigoprod.setEnabled(false);
+    this.fechafac.setEnabled(true);
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        FondoFactura = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        boxidentidad = new javax.swing.JComboBox<>();
+        textcedulabus = new javax.swing.JTextField();
+        apellidofac = new javax.swing.JLabel();
+        jlabelagregarcliente = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        textapellidofac = new javax.swing.JTextField();
+        textotelefonofac = new javax.swing.JTextField();
+        direccionfac = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        serviciofac = new javax.swing.JTextField();
+        costofac = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        fechafac = new com.toedter.calendar.JDateChooser();
+        CrearFactura = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        Limpiar = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        Salir = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        boxestado = new javax.swing.JComboBox<>();
+        botonsinproducto = new javax.swing.JButton();
+        botonconproducto = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        ivafac = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        nombreprod = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        precioprod = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        cantprod = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        costotalfac = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        nombrefac = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        codigoprod = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("FACTURA");
+        setUndecorated(true);
+
+        FondoFactura.setBackground(new java.awt.Color(32, 15, 42));
+        FondoFactura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 102, 255)));
+        FondoFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("FACTURA");
+        FondoFactura.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 460, -1));
+
+        boxidentidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V-", "E-", "P-", "J-", "G-" }));
+        boxidentidad.setToolTipText("Seleccionar el tipo de cedula para buscar el cliente.");
+        boxidentidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boxidentidadMouseClicked(evt);
+            }
+        });
+        FondoFactura.add(boxidentidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 50, -1));
+
+        textcedulabus.setToolTipText("Campo de texto para introducir el documento de identidad   del proveedor que sea buscaar o registrar.");
+        textcedulabus.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textcedulabusFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textcedulabusFocusLost(evt);
+            }
+        });
+        textcedulabus.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textcedulabusKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(textcedulabus, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 80, -1));
+
+        apellidofac.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        apellidofac.setForeground(new java.awt.Color(240, 240, 240));
+        apellidofac.setText("APELLIDO");
+        FondoFactura.add(apellidofac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 20));
+
+        jlabelagregarcliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plus.png"))); // NOI18N
+        jlabelagregarcliente.setToolTipText("Boton para abrir el Registro de Clientes.");
+        jlabelagregarcliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlabelagregarcliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlabelagregarclienteMouseClicked(evt);
+            }
+        });
+        FondoFactura.add(jlabelagregarcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel5.setText("TELÉFONO");
+        FondoFactura.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel6.setText("DIRECCIÓN");
+        FondoFactura.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 20));
+
+        textapellidofac.setToolTipText("Apellido del cliente.");
+        FondoFactura.add(textapellidofac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, -1));
+
+        textotelefonofac.setToolTipText("telefono del cliente.");
+        textotelefonofac.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textotelefonofacFocusGained(evt);
+            }
+        });
+        textotelefonofac.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textotelefonofacKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(textotelefonofac, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 131, -1));
+
+        direccionfac.setToolTipText("Direccion del cliente.");
+        FondoFactura.add(direccionfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 131, -1));
+
+        jLabel7.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel7.setText("SERVICIO");
+        FondoFactura.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+        serviciofac.setText("  ");
+        serviciofac.setToolTipText("Servicio que se esta o se va a realizar.");
+        serviciofac.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviciofacFocusGained(evt);
+            }
+        });
+        serviciofac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviciofacActionPerformed(evt);
+            }
+        });
+        FondoFactura.add(serviciofac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 131, -1));
+
+        costofac.setToolTipText("Costo del servicio.");
+        costofac.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                costofacFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                costofacFocusLost(evt);
+            }
+        });
+        costofac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                costofacActionPerformed(evt);
+            }
+        });
+        costofac.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                costofacKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                costofacKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(costofac, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 131, -1));
+
+        jLabel17.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel17.setText("FECHA");
+        FondoFactura.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
+
+        fechafac.setDateFormatString("yyyy-MM-dd");
+        FondoFactura.add(fechafac, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 131, -1));
+
+        CrearFactura.setBackground(new java.awt.Color(32, 15, 42));
+        CrearFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CrearFactura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearFacturaMouseClicked(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel19.setText("CREAR FACTURA");
+        jLabel19.setToolTipText("Registrar factura.");
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/checked-11.png"))); // NOI18N
+
+        javax.swing.GroupLayout CrearFacturaLayout = new javax.swing.GroupLayout(CrearFactura);
+        CrearFactura.setLayout(CrearFacturaLayout);
+        CrearFacturaLayout.setHorizontalGroup(
+            CrearFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearFacturaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(CrearFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        CrearFacturaLayout.setVerticalGroup(
+            CrearFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearFacturaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addContainerGap())
+        );
+
+        FondoFactura.add(CrearFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        Limpiar.setBackground(new java.awt.Color(32, 15, 42));
+        Limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Limpiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LimpiarMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/repea1t.png"))); // NOI18N
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel23.setText("LIMPIAR");
+        jLabel23.setToolTipText("Limpiar los campos de textos.");
+
+        javax.swing.GroupLayout LimpiarLayout = new javax.swing.GroupLayout(Limpiar);
+        Limpiar.setLayout(LimpiarLayout);
+        LimpiarLayout.setHorizontalGroup(
+            LimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LimpiarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(LimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addContainerGap())
+        );
+        LimpiarLayout.setVerticalGroup(
+            LimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LimpiarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(LimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LimpiarLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel23))
+                    .addComponent(jLabel22))
+                .addContainerGap())
+        );
+
+        FondoFactura.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
+
+        Salir.setBackground(new java.awt.Color(32, 15, 42));
+        Salir.setToolTipText("Salir al menu principal.");
+        Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirMouseClicked(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel21.setText("SALIR");
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exit-1.png"))); // NOI18N
+
+        javax.swing.GroupLayout SalirLayout = new javax.swing.GroupLayout(Salir);
+        Salir.setLayout(SalirLayout);
+        SalirLayout.setHorizontalGroup(
+            SalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SalirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21))
+                .addContainerGap())
+        );
+        SalirLayout.setVerticalGroup(
+            SalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SalirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel21)
+                .addContainerGap())
+        );
+
+        FondoFactura.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, -1, -1));
+
+        boxestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente", "Finalizado" }));
+        boxestado.setToolTipText("Estado en el que esta el servicio.");
+        boxestado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxestadoActionPerformed(evt);
+            }
+        });
+        FondoFactura.add(boxestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 260, 131, -1));
+
+        botonsinproducto.setText("Servicio");
+        botonsinproducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonsinproductoActionPerformed(evt);
+            }
+        });
+        FondoFactura.add(botonsinproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 120, 20));
+
+        botonconproducto.setText("Con producto");
+        botonconproducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonconproductoActionPerformed(evt);
+            }
+        });
+        FondoFactura.add(botonconproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 120, 20));
+
+        jLabel14.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel14.setText("COSTO");
+        jLabel14.setToolTipText("");
+        FondoFactura.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 40, 20));
+        FondoFactura.add(ivafac, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 131, -1));
+
+        jLabel16.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel16.setText("IVA");
+        FondoFactura.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 70, -1));
+
+        jLabel8.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel8.setText("PRODUCTO");
+        FondoFactura.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+
+        nombreprod.setToolTipText("Nombre del producto.");
+        nombreprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreprodActionPerformed(evt);
+            }
+        });
+        FondoFactura.add(nombreprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 131, -1));
+
+        jLabel12.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel12.setText("PRECIO");
+        FondoFactura.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+
+        precioprod.setToolTipText("Precio del producto de forma unitaria.");
+        precioprod.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                precioprodFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                precioprodFocusLost(evt);
+            }
+        });
+        precioprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precioprodActionPerformed(evt);
+            }
+        });
+        precioprod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                precioprodKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                precioprodKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(precioprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 131, -1));
+
+        jLabel13.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel13.setText("CANTIDAD");
+        FondoFactura.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+
+        cantprod.setToolTipText("Canitdad del producto.");
+        cantprod.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantprodFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantprodFocusLost(evt);
+            }
+        });
+        cantprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantprodActionPerformed(evt);
+            }
+        });
+        cantprod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantprodKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cantprodKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cantprodKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(cantprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 131, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plus.png"))); // NOI18N
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        FondoFactura.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 22, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit-1.png"))); // NOI18N
+        FondoFactura.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 22, -1));
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edit-1.png"))); // NOI18N
+        FondoFactura.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 22, -1));
+
+        jLabel15.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel15.setText("COSTO TOTAL");
+        FondoFactura.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+
+        costotalfac.setToolTipText("Costo Total .");
+        FondoFactura.add(costotalfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 131, -1));
+
+        jLabel9.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel9.setText("ESTADO");
+        FondoFactura.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 240, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel3.setText("NOMBRE");
+        FondoFactura.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
+
+        nombrefac.setToolTipText("Nombre del cliente.");
+        FondoFactura.add(nombrefac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 130, -1));
+
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Minus_25px_1.png"))); // NOI18N
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
+        FondoFactura.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, -1));
+
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Unchecked_Checkbox_25px.png"))); // NOI18N
+        FondoFactura.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, -1));
+
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_25px_1.png"))); // NOI18N
+        jLabel27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel27MouseClicked(evt);
+            }
+        });
+        FondoFactura.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("CÓDIGO");
+        FondoFactura.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        codigoprod.setToolTipText("Codigo del producto que se desea registrar en la factura-");
+        codigoprod.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                codigoprodFocusGained(evt);
+            }
+        });
+        codigoprod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                codigoprodKeyTyped(evt);
+            }
+        });
+        FondoFactura.add(codigoprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 110, 70, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search_1.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        FondoFactura.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FondoFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FondoFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void cantprodActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+    }                                        
+
+    private void precioprodActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void nombreprodActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void textcedulabusKeyTyped(java.awt.event.KeyEvent evt) {                                       
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                      
+
+    private void textcedulabusFocusLost(java.awt.event.FocusEvent evt) {                                        
+        if(this.textcedulabus.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo de identidad","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+        Pattern p= Pattern.compile("[^0-9]");
+        Matcher m=p.matcher(textcedulabus.getText());
+        try{
+         Conexion conec = new Conexion();
+         conec.ConectarBDatos();
+         conec.sql="Select clientes.* from clientes where cedula= '"+this.boxidentidad.getSelectedItem()+textcedulabus.getText()+"'";
+         conec.tb=conec.stm.executeQuery(conec.sql);
+         if(conec.tb.next()){
+              this.nombrefac.setText(conec.tb.getString("nombre"));
+              this.textapellidofac.setText(conec.tb.getString("apellido"));
+              this.textotelefonofac.setText(conec.tb.getString("telf"));
+              this.direccionfac.setText(conec.tb.getString("direccion"));
+              
+              this.textcedulabus.setEnabled(false);
+              this.serviciofac.setEnabled(true);
+              this.costofac.setEnabled(true);
+              this.costotalfac.setEnabled(false);
+              this.ivafac.setEnabled(false);
+              this.serviciofac.setEnabled(true);
+              
+              conec.DesconectarBD();
+         }
+          else
+           {
+               int resp=JOptionPane.showConfirmDialog(this, "No existe el cliente, desea agregar?","Advertencia",0, JOptionPane.QUESTION_MESSAGE);
+        if(resp==0){
+            ModuloRegistro modulor = new ModuloRegistro();
+            modulor.setVisible(true);
+            modulor.setLocationRelativeTo(null);
+            modulor.setSize(388,490);
+        }
+               this.textcedulabus.setEnabled(true);
+                this.nombrefac.setEnabled(false);
+                this.textotelefonofac.setEnabled(false);
+                this.serviciofac.setEnabled(false);
+                this.costofac.setEnabled(false);
+                this.textapellidofac.setEnabled(false); 
+                this.direccionfac.setEnabled(false);
+                this.costotalfac.setEnabled(false);
+                this.nombreprod.setEnabled(false);
+                this.precioprod.setEnabled(false);
+                this.cantprod.setEnabled(false);
+                this.ivafac.setEnabled(false);
+                this.fechafac.setEnabled(false);
+           }
+        }
+        catch(Exception e2)
+          {
+              System.out.println("Error en JDBC");
+        }        // TODO add your handling code here:
+        }
+    }                                       
+
+    private void costofacActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void CrearFacturaMouseClicked(java.awt.event.MouseEvent evt) {                                          
+        Pattern p= Pattern.compile("[^0-9]");
+        Matcher m=p.matcher(textcedulabus.getText());
+        if(m.find() || ((textcedulabus.getText().length()< 6) && (textcedulabus.getText().length()> 8)))
+        { JOptionPane.showMessageDialog(new JFrame(),"La cedula debe ser mayor a 6 digitos y menor a 9 digitos","Alerta",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+        try
+        {
+            if((this.textcedulabus.getText().equals("")) || (this.textotelefonofac.getText().equals("")) || (this.serviciofac.getText().equals(""))
+                    || (this.costofac.getText().equals("")) || (this.direccionfac.getText().equals(""))){
+                   JOptionPane.showMessageDialog(new JFrame(), "Rellene todos los campos", "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                Conexion conec = new Conexion();
+        conec.ConectarBDatos();
+        DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        Date fecha = this.fechafac.getDate();
+        String fechatexto = formatter.format(fecha);
+        if (this.nombreprod.isEnabled() == false)
+            {
+                float costoserv = Float.parseFloat(this.costofac.getText());
+                float iva= Float.parseFloat(this.costofac.getText())*16/100;
+                conec.sql="INSERT INTO impuesto(costo_total, impuesto, fecha_imp) VALUES ('"+costoserv+"', '"+iva+"','"+fechatexto+"')";
+                conec.stm.executeUpdate(conec.sql);
+                conec.sql="INSERT INTO servicios(cedula_ser, servicio, costo_ser, fecha_ser, estado) VALUES ('"+this.boxidentidad.getSelectedItem()+this.textcedulabus.getText()+"','"+this.serviciofac.getText()+"','"+costoserv+"','"+fechatexto+"','"+this.boxestado.getSelectedItem()+"')";
+                conec.stm.executeUpdate(conec.sql);
+                JOptionPane.showMessageDialog(new JFrame(),"Factura registrada","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+                conec.DesconectarBD();
+            }
+        if (this.nombreprod.isEnabled() == true){
+            Integer cant= Integer.parseInt(this.cantprod.getText());
+            float costoprod = Float.parseFloat(this.precioprod.getText());
+            float costoservprod= Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cant);
+            float costototalprod = (Float.parseFloat(this.precioprod.getText())*cant);
+            float iva= (Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cant))*16/100;
+            conec.sql="SELECT inventario.* from inventario where codigo_inv='"+this.codigoprod.getText()+"'";
+            conec.tb=conec.stm.executeQuery(conec.sql);
+            if(conec.tb.next()){
+            Integer cantprod = Integer.parseInt(conec.tb.getString("cant"));
+            int cantnva = cantprod-cant;
+            if(cantnva < 0){
+                 JOptionPane.showMessageDialog(new JFrame(),"No es posible registrar. Inventario negativo,\nInventario actual del producto: "+cantprod,"Mensaje",JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+            conec.sql="INSERT INTO impuesto(costo_total, impuesto, fecha_imp) VALUES ('"+costoservprod+"','"+iva+"','"+fechatexto+"')";
+            conec.stm.executeUpdate(conec.sql);
+            conec.sql="INSERT INTO servicios (cedula_ser, servicio, costo_ser, fecha_ser, estado) VALUES ('"+this.textcedulabus.getText()+"','"+this.serviciofac.getText()+"','"+costoservprod+"','"+fechatexto+"','"+this.boxestado.getSelectedItem()+"')";
+            conec.stm.executeUpdate(conec.sql);
+            conec.sql="INSERT INTO ventas(cedula_ven, productoventa,cant_venta, costo_venta, costotal_ven, fecha_venta) VALUES ('"+this.boxidentidad.getSelectedItem()+this.textcedulabus.getText()+"','"+this.nombreprod.getText()+"','"+this.cantprod.getText()+"','"+costoprod+"','"+costototalprod+"','"+fechatexto+"')";
+            conec.stm.executeUpdate(conec.sql);
+            conec.sql="UPDATE inventario set cant='"+cantnva+"' where codigo_inv='"+this.codigoprod.getText()+"'";
+            conec.stm.executeUpdate(conec.sql);
+            JOptionPane.showMessageDialog(new JFrame(),"Factura registrada","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+            }
+            }
+        limpiar();
+        this.textcedulabus.setEnabled(true);
+        this.textcedulabus.requestFocus();
+        conec.DesconectarBD();           
+        }
+            }
+        }
+        catch(Exception e2)
+        {
+        System.out.println("Error en incluir "+e2);
+        }
+        }
+    }                                         
+
+    private void LimpiarMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        limpiar();
+    }                                    
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {                                      
+       
+        // TODO add your handling code here:
+    }                                     
+
+    private void SalirMouseClicked(java.awt.event.MouseEvent evt) {                                   
+        dispose();
+    }                                  
+
+    private void boxidentidadMouseClicked(java.awt.event.MouseEvent evt) {                                          
+            // TODO add your handling code here:
+    }                                         
+
+    private void costofacKeyTyped(java.awt.event.KeyEvent evt) {                                  
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                 
+
+    private void costofacFocusLost(java.awt.event.FocusEvent evt) {                                   
+        
+    }                                  
+
+    private void precioprodFocusLost(java.awt.event.FocusEvent evt) {                                     
+        /*if(this.precioprod.getText().equals("0") || this.precioprod.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo con un valor distinto de 0","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Integer cantpro = Integer.parseInt(this.cantprod.getText());
+        float mostrarcosto=Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro);
+        float mostrariva=(Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro))*16/100;
+        this.costotalfac.setText(Float.toString(mostrarcosto));
+        this.ivafac.setText(Float.toString(mostrariva));
+        }*/
+    }                                    
+
+    private void boxestadoActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void botonconproductoActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+            this.nombreprod.setEnabled(false);
+            this.precioprod.setEnabled(false);
+            this.cantprod.setEnabled(false);
+            this.fechafac.setEnabled(true);
+            this.codigoprod.setEnabled(true);
+            this.serviciofac.setEnabled(false);
+            this.costofac.setEnabled(false);
+    }                                                
+
+    private void botonsinproductoActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+            this.nombreprod.setEnabled(false);
+            this.codigoprod.setEnabled(false);
+            this.precioprod.setEnabled(false);
+            this.cantprod.setEnabled(false);
+            this.serviciofac.setEnabled(true);
+            this.costofac.setEnabled(true);
+            this.fechafac.setEnabled(true);
+            this.serviciofac.setEnabled(true);
+            this.costofac.setEnabled(true);
+            this.nombreprod.setText("");
+            this.precioprod.setText("0");
+            this.cantprod.setText("");
+            this.codigoprod.setText("");
+    }                                                
+
+    private void serviciofacActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jlabelagregarclienteMouseClicked(java.awt.event.MouseEvent evt) {                                                  
+        ModuloRegistro registro = new ModuloRegistro();
+        registro.setVisible(true);
+        registro.setLocationRelativeTo(null);
+        registro.setSize(388,490);
+        
+    }                                                 
+
+    private void textcedulabusFocusGained(java.awt.event.FocusEvent evt) {                                          
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.textcedulabus.setDocument(new JTextFieldLimit(8));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.textcedulabus.setDocument(new JTextFieldLimit(9));
+        }
+    }                                         
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        ModuloCompra compra = new ModuloCompra();
+        compra.setVisible(true);
+        compra.setLocationRelativeTo(null);
+        compra.setResizable(false);
+    }                                     
+
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        this.setExtendedState(ICONIFIED);
+        // TODO add your handling code here:
+    }                                     
+
+    private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        this.dispose();
+        // TODO add your handling code here:
+    }                                     
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {                                     
+        try{
+            Conexion conec = new Conexion();
+            conec.ConectarBDatos();
+            conec.sql="Select inventario.* from inventario where codigo_inv='"+this.codigoprod.getText()+"'";
+            conec.tb=conec.stm.executeQuery(conec.sql);//ejecutando el select
+            if(conec.tb.next()){
+                this.nombreprod.setText(conec.tb.getString("producto"));
+                this.codigoprod.setEnabled(false);
+                this.nombreprod.setEnabled(false);
+                this.precioprod.setEnabled(true);
+                this.cantprod.setEnabled(true);
+            }
+            else{
+                int resp=JOptionPane.showConfirmDialog(this, "Producto inexistente, desea agregar?","Advertencia",0, JOptionPane.QUESTION_MESSAGE);
+        if(resp==0){
+            ModuloCompra moduloc = new ModuloCompra();
+            moduloc.setVisible(true);
+            moduloc.setLocationRelativeTo(null);
+        }
+            
+            }
+        }
+        catch(Exception e2)
+        {
+            System.out.println("Error en JDBC");
+        }
+    }                                    
+
+    private void codigoprodKeyTyped(java.awt.event.KeyEvent evt) {                                    
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                   
+
+    private void precioprodKeyTyped(java.awt.event.KeyEvent evt) {                                    
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                   
+
+    private void cantprodKeyTyped(java.awt.event.KeyEvent evt) {                                  
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                 
+
+    private void textotelefonofacKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }                                         
+
+    private void textotelefonofacFocusGained(java.awt.event.FocusEvent evt) {                                             
+        this.textotelefonofac.setDocument(new JTextFieldLimit(11));
+    }                                            
+
+    private void serviciofacFocusGained(java.awt.event.FocusEvent evt) {                                        
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.serviciofac.setDocument(new JTextFieldLimit(25));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.serviciofac.setDocument(new JTextFieldLimit(25));
+        }
+    }                                       
+
+    private void costofacFocusGained(java.awt.event.FocusEvent evt) {                                     
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.costofac.setDocument(new JTextFieldLimit(15));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.costofac.setDocument(new JTextFieldLimit(15));
+        }
+    }                                    
+
+    private void codigoprodFocusGained(java.awt.event.FocusEvent evt) {                                       
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.codigoprod.setDocument(new JTextFieldLimit(15));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.codigoprod.setDocument(new JTextFieldLimit(15));
+        }
+    }                                      
+
+    private void precioprodFocusGained(java.awt.event.FocusEvent evt) {                                       
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.precioprod.setDocument(new JTextFieldLimit(15));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.precioprod.setDocument(new JTextFieldLimit(15));
+        }
+           
+    }                                      
+
+    private void cantprodFocusGained(java.awt.event.FocusEvent evt) {                                     
+        if(this.boxidentidad.getSelectedIndex()==0 || this.boxidentidad.getSelectedIndex()==1 || this.boxidentidad.getSelectedIndex()==2){
+            this.cantprod.setDocument(new JTextFieldLimit(10));
+        }
+        if(this.boxidentidad.getSelectedIndex()==3 || this.boxidentidad.getSelectedIndex()==4){
+            this.cantprod.setDocument(new JTextFieldLimit(10));
+        }
+         
+    }                                    
+
+    private void cantprodFocusLost(java.awt.event.FocusEvent evt) {                                   
+        if(this.precioprod.getText().equals("0") || this.precioprod.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo con un valor distinto de 0","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Integer cantpro = Integer.parseInt(this.cantprod.getText());
+        float mostrarcosto=Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro);
+        float mostrariva=(Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro))*16/100;
+        this.costotalfac.setText(Float.toString(mostrarcosto));
+        this.ivafac.setText(Float.toString(mostrariva));
+        }
+    }                                  
+
+    private void cantprodKeyPressed(java.awt.event.KeyEvent evt) {                                    
+        
+    }                                   
+
+    private void cantprodKeyReleased(java.awt.event.KeyEvent evt) {                                     
+        if(this.precioprod.getText().equals("0") || this.precioprod.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo con un valor distinto de 0","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Integer cantpro = Integer.parseInt(this.cantprod.getText());
+        float mostrarcosto=Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro);
+        float mostrariva=(Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro))*16/100;
+        this.costotalfac.setText(Float.toString(mostrarcosto));
+        this.ivafac.setText(Float.toString(mostrariva));
+        }
+    }                                    
+
+    private void precioprodKeyReleased(java.awt.event.KeyEvent evt) {                                       
+        if(this.precioprod.getText().equals("0") || this.precioprod.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo con un valor distinto de 0","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Integer cantpro = Integer.parseInt(this.cantprod.getText());
+        float mostrarcosto=Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro);
+        float mostrariva=(Float.parseFloat(this.costofac.getText()) + (Float.parseFloat(this.precioprod.getText())*cantpro))*16/100;
+        this.costotalfac.setText(Float.toString(mostrarcosto));
+        this.ivafac.setText(Float.toString(mostrariva));
+        }
+    }                                      
+
+    private void costofacKeyReleased(java.awt.event.KeyEvent evt) {                                     
+        if(this.costofac.getText().equals("0") || this.costofac.getText().equals("")){
+            JOptionPane.showMessageDialog(new JFrame(),"Rellene el campo con un valor distinto de 0","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+        float mostrarcosto=Float.parseFloat(this.costofac.getText());
+        float mostrariva= Float.parseFloat(this.costofac.getText())*16/100;
+        this.costotalfac.setText(Float.toString(mostrarcosto));
+        this.ivafac.setText(Float.toString(mostrariva));
+        }
+    }                                    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Factura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Factura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Factura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Factura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Factura().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JPanel CrearFactura;
+    private javax.swing.JPanel FondoFactura;
+    private javax.swing.JPanel Limpiar;
+    private javax.swing.JPanel Salir;
+    private javax.swing.JLabel apellidofac;
+    private javax.swing.JButton botonconproducto;
+    private javax.swing.JButton botonsinproducto;
+    private javax.swing.JComboBox<String> boxestado;
+    private javax.swing.JComboBox<String> boxidentidad;
+    private javax.swing.JTextField cantprod;
+    private javax.swing.JTextField codigoprod;
+    private javax.swing.JTextField costofac;
+    private javax.swing.JTextField costotalfac;
+    private javax.swing.JTextField direccionfac;
+    private com.toedter.calendar.JDateChooser fechafac;
+    private javax.swing.JTextField ivafac;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jlabelagregarcliente;
+    private javax.swing.JTextField nombrefac;
+    private javax.swing.JTextField nombreprod;
+    private javax.swing.JTextField precioprod;
+    private javax.swing.JTextField serviciofac;
+    private javax.swing.JTextField textapellidofac;
+    private javax.swing.JTextField textcedulabus;
+    private javax.swing.JTextField textotelefonofac;
+    // End of variables declaration                   
+}
