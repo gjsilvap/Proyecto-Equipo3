@@ -1,0 +1,43 @@
+package Interfaz;
+
+
+import java.sql.*; 
+
+public class Conexion {
+    Connection con; 
+    Statement stm; 
+    ResultSet tb;
+    String url="";
+    public String sql=""; 
+
+public Conexion(){
+
+}
+public boolean ConectarBDatos(){
+    url = "jdbc:mysql://localhost:3306/servicios";
+    try{
+        Class.forName("org.gjt.mm.mysql.Driver");
+        con=DriverManager.getConnection(url,"root","");
+        stm=con.createStatement();
+        return true;
+    }
+    catch(Exception e){
+        System.out.println("Error: "+e);
+        return false;
+    }
+}
+public void DesconectarBD(){
+    try{
+        stm.close();
+        con.close();
+        stm=null;
+        con=null;
+        
+    }
+    catch(SQLException e){
+        System.out.println("Error en Desconectar "+e);
+    }
+    
+}
+
+}
