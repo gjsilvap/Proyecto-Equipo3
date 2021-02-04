@@ -1,0 +1,53 @@
+package Clases;
+
+import Interfaz.From_Login;
+import Interfaz.Interfaz;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author AngelR
+ */
+public class Login {
+    Conx c = new Conx();
+    Connection cn= c.getConnection();
+    
+
+    
+    public int Validar_Ingreso(){
+        String usuario=From_Login.Tex_Usuario.getText();
+        String contraseña=String.valueOf(From_Login.Tex_Contraseña.getPassword());
+        
+        int resultado=0;
+        
+        String SQL="SELECT * FROM usuarios WHERE usuario='"+usuario+"' AND contraseña='"+contraseña+"'";
+        
+        Connection Connect = null;
+        try{
+            Statement st = cn.createStatement();
+            ResultSet rs= st.executeQuery(SQL);
+           //Interfaz inte = new Interfaz();
+           //inte.setVisible(true);
+           //inte.setLocationRelativeTo(null);
+        if(rs.next()){
+            resultado=1;
+        }
+        
+        }catch( SQLException e){
+            JOptionPane.showMessageDialog(null, e,"Error de Conexion",JOptionPane.ERROR_MESSAGE);
+        }finally{
+            
+           c.Desconectar();
+              
+            
+            
+        }
+        return resultado;
+    }
+    
+    
+}
